@@ -1,0 +1,4 @@
+ajeetdsouza/zoxide
+antonmedv/fx
+eza-community/eza
+junegunn/fzf
