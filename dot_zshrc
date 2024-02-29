@@ -1,7 +1,6 @@
-# source homebrew executable
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-# Set EDITOR to VS Code
+# Env Variables Exports
 export EDITOR=code
 export VISUAL="$EDITOR"
 
@@ -9,6 +8,7 @@ export VISUAL="$EDITOR"
 alias zconf="$EDITOR ~/.zshrc"
 alias fport="lsof -i"
 alias kport="kill -9"
+alias moi="chezmoi"
 
 # Add CA to fix "error Error: unable to get local issuer certificate"
 export NODE_EXTRA_CA_CERTS=/opt/homebrew/etc/openssl@3/cert.pem
@@ -18,7 +18,6 @@ export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
 # --------------- KEEP AT THE END OF THE FILE ---------------
-# source antidote
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
 # --------------- KEEP AT THE END OF THE FILE ---------------

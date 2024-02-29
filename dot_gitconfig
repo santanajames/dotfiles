@@ -1,9 +1,14 @@
 [user]
 	name = Santana James
-	email = santana.james@gmail.com
+	email = santanajames@users.noreply.github.com
 [core]
 	editor = code --wait
 [merge]
 	tool = vscode
 [mergetool "vscode"]
 	cmd = "code --wait"
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
