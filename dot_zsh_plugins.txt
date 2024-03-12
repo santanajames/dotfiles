@@ -2,7 +2,7 @@ ajeetdsouza/zoxide
 antonmedv/fx
 eza-community/eza
 junegunn/fzf
-marlonrichert/zsh-autocomplete
+# marlonrichert/zsh-autocomplete
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
