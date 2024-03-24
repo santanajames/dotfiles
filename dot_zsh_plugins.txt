@@ -1,6 +1,7 @@
 zsh-users/zsh-completions path:src kind:fpath
 ajeetdsouza/zoxide
 eza-community/eza
+ohmyzsh/ohmyzsh path:plugins/git
 sindresorhus/pure kind:fpath
 # ❗️ Load these plugins last
 zdharma-continuum/fast-syntax-highlighting kind:defer
