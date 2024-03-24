@@ -4,7 +4,14 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 export EDITOR=code
 export VISUAL="$EDITOR"
 
+# zsh-history-substring-search configuration
+bindkey '^[[A' history-substring-search-up # or '\eOA'
+bindkey '^[[B' history-substring-search-down # or '\eOB'
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
+
 # Aliases
+# alias ls='eza'
+# alias ll='eza --long --all --group-directories-first --git'
 alias zconf="$EDITOR ~/.zshrc"
 alias fport="lsof -i"
 alias kport="kill -9"
@@ -21,4 +28,7 @@ export PATH="$VOLTA_HOME/bin:$PATH"
 # --------------- KEEP AT THE END OF THE FILE ---------------
 source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
 antidote load
+autoload -Uz compinit && compinit
+autoload -Uz promptinit; promptinit
+prompt pure
 # --------------- KEEP AT THE END OF THE FILE ---------------

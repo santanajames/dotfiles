@@ -1,8 +1,8 @@
+zsh-users/zsh-completions path:src kind:fpath
 ajeetdsouza/zoxide
-antonmedv/fx
 eza-community/eza
-junegunn/fzf
-# marlonrichert/zsh-autocomplete
-zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-completions
-zsh-users/zsh-autosuggestions
+sindresorhus/pure kind:fpath
+# ❗️ Load these plugins last
+zdharma-continuum/fast-syntax-highlighting kind:defer
+zsh-users/zsh-autosuggestions kind:defer
+zsh-users/zsh-history-substring-search kind:defer
