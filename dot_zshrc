@@ -12,11 +12,23 @@ HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 # Aliases
 # alias ls='eza'
 # alias ll='eza --long --all --group-directories-first --git'
+## Utils
 alias zconf="$EDITOR ~/.zshrc"
 alias fport="lsof -i"
 alias kport="kill -9"
 alias moi="chezmoi"
 alias lsofc='lsof | head -1 | awk '\''{ printf "%-10s %-10s %-10s\n", "COUNT", $2, $1; }'\'' && lsof +c 0 | awk '\''{ print $2, $1; }'\'' | sort -rn | uniq -c | sort -rn | head -20 | awk '\''{ printf "%-10s %-10s %-10s\n", $1, $2, $3; }'\'
+## Git
+alias ga="git add"
+alias gaa="git add --all"
+alias gco="git checkout"
+alias gcb="git checkout -b"
+alias gcm="git commit --message"
+alias gd="git diff"
+alias gl="git pull"
+alias gp="git push"
+alias gpsu="git push --set-upstream origin $(git_current_branch)"
+alias gst="git status"
 
 # Add CA to fix "error Error: unable to get local issuer certificate"
 export NODE_EXTRA_CA_CERTS=/opt/homebrew/etc/openssl@3/cert.pem
