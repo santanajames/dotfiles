@@ -34,6 +34,8 @@ apply_brew_shellenv() {
 }
 
 install_homebrew() {
+  apply_brew_shellenv
+
   if command -v brew >/dev/null 2>&1; then
     return
   fi
@@ -42,18 +44,12 @@ install_homebrew() {
     fail "Homebrew installation requires a macOS administrator account for sudo access. Current user '$USER' is not in the admin group."
   fi
 
-  if [[ -t 0 && -t 1 ]]; then
-    log 'Requesting administrator access for Homebrew installation'
-    sudo -v
-    log 'Installing Homebrew'
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  elif sudo -n -v >/dev/null 2>&1; then
-    log 'Installing Homebrew'
-    NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  else
+  if [[ ! -t 0 || ! -t 1 ]]; then
     fail 'Homebrew installation needs sudo access. Rerun bootstrap in an interactive terminal so macOS can prompt for your password, or run sudo -v first.'
   fi
 
+  log 'Installing Homebrew'
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   apply_brew_shellenv
 }
 
