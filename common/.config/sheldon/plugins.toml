@@ -1,0 +1,35 @@
+shell = "zsh"
+
+# ── Completions ───────────────────────────────────────────────────────────────
+# Add to fpath ONLY — do not source. compinit runs after sheldon in .zshrc.
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+apply = ["fpath"]
+
+# ── Syntax highlighting ───────────────────────────────────────────────────────
+# Must be sourced near the end of .zshrc (sheldon handles ordering by toml order)
+# zsh-syntax-highlighting wraps ZLE widgets — load before autosuggestions.
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+
+# ── Autosuggestions ───────────────────────────────────────────────────────────
+# Grey ghost text from history as you type. Load after syntax highlighting.
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+
+# ── History substring search ──────────────────────────────────────────────────
+# Up/down arrows search history filtered by current input.
+# Key bindings are set in .zshrc after sheldon source.
+[plugins.zsh-history-substring-search]
+github = "zsh-users/zsh-history-substring-search"
+
+# ── fzf-tab ───────────────────────────────────────────────────────────────────
+# Replace the default zsh completion menu with fzf fuzzy finder.
+# The zstyle configuration for fzf-tab is set in .zshrc after compinit (section 5).
+[plugins.fzf-tab]
+github = "Aloxaf/fzf-tab"
+
+# ── Autopair ─────────────────────────────────────────────────────────────────
+# Auto-close brackets, quotes, backticks. Zero runtime overhead after init.
+[plugins.zsh-autopair]
+github = "hlissner/zsh-autopair"

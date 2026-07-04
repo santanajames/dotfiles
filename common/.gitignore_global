@@ -1,0 +1,10 @@
+.DS_Store
+.direnv/
+.env
+.env.*
+.idea/
+.turbo/
+.vscode/
+dist/
+node_modules/
+coverage/

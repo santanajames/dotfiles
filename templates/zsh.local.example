@@ -1,0 +1,4 @@
+# Add machine-specific aliases, environment variables, or functions here.
+# Example:
+# export PATH="$HOME/.cargo/bin:$PATH"
+# alias worktree='git worktree list'

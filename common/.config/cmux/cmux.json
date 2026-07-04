@@ -1,0 +1,139 @@
+{
+    "$schema": "https://raw.githubusercontent.com/manaflow-ai/cmux/main/web/data/cmux.schema.json",
+    "schemaVersion": 1,
+    "app": {
+        "appearance": "dark",
+        "newWorkspacePlacement": "afterCurrent",
+        "workspaceInheritWorkingDirectory": true,
+        "openSupportedFilesInCmux": true,
+        "openMarkdownInCmuxViewer": true,
+        "reorderOnNotification": false,
+        "warnBeforeQuit": true,
+        "commandPaletteSearchesAllSurfaces": true
+    },
+    "terminal": {
+        "showScrollBar": false,
+        "autoResumeAgentSessions": true
+    },
+    "notifications": {
+        "dockBadge": true,
+        "showInMenuBar": true,
+        "unreadPaneRing": true,
+        "paneFlash": true,
+        "sound": "Tink",
+        "hooksMode": "append"
+    },
+    "sidebar": {
+        "hideAllDetails": false,
+        "showWorkspaceDescription": true,
+        "branchLayout": "inline",
+        "showNotificationMessage": true,
+        "showBranchDirectory": true,
+        "showPullRequests": true,
+        "showPorts": true,
+        "showLog": true,
+        "showProgress": true,
+        "showCustomMetadata": true
+    },
+    "automation": {
+        "socketControlMode": "cmuxOnly",
+        "claudeCodeIntegration": true,
+        "cursorIntegration": true,
+        "geminiIntegration": true,
+        "portBase": 9100,
+        "portRange": 10
+    },
+    "browser": {
+        "defaultSearchEngine": "duckduckgo",
+        "showSearchSuggestions": true,
+        "theme": "system",
+        "openTerminalLinksInCmuxBrowser": true,
+        "interceptTerminalOpenCommandInCmuxBrowser": true,
+        "hostsToOpenInEmbeddedBrowser": [
+            "localhost",
+            "*.localhost",
+            "127.0.0.1",
+            "::1",
+            "*.internal.example"
+        ],
+        "urlsToAlwaysOpenExternally": [
+            "https://docs.google.com/*"
+        ]
+    },
+    "shortcuts": {
+        "bindings": {
+            "toggleSidebar": "cmd+b",
+            "toggleFileExplorer": "cmd+opt+b",
+            "goToWorkspace": "cmd+p",
+            "splitRight": "cmd+d",
+            "splitDown": "cmd+shift+d",
+            "openBrowser": "cmd+shift+l",
+            "jumpToUnread": "cmd+shift+u",
+            "commandPalette": "cmd+shift+p",
+            "focusBrowserAddressBar": "cmd+l"
+        }
+    },
+    "commands": [
+        {
+            "name": "Worktree Agents",
+            "description": "Create a fresh worktree and start an agent workspace",
+            "workspace": {
+                "name": "Agents",
+                "cwd": ".",
+                "layout": {
+                    "direction": "horizontal",
+                    "split": 0.38,
+                    "children": [
+                        {
+                            "pane": {
+                                "surfaces": [
+                                    {
+                                        "type": "terminal",
+                                        "name": "Main",
+                                        "command": "exec ${SHELL:-/bin/zsh} -l",
+                                        "focus": true
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "direction": "vertical",
+                            "split": 0.5,
+                            "children": [
+                                {
+                                    "pane": {
+                                        "surfaces": [
+                                            {
+                                                "type": "terminal",
+                                                "name": "Agent"
+                                            }
+                                        ]
+                                    }
+                                },
+                                {
+                                    "pane": {
+                                        "surfaces": [
+                                            {
+                                                "type": "browser",
+                                                "name": "Localhost"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Run Tests",
+            "keywords": [
+                "test",
+                "check"
+            ],
+            "command": "cd \"$(git rev-parse --show-toplevel)\" && npm test",
+            "confirm": true
+        }
+    ]
+}

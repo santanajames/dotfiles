@@ -1,0 +1,22 @@
+.DS_Store
+
+# Temporary editor files
+*~
+*.swp
+*.swo
+
+# Homebrew local state
+Brewfile.lock.json
+Brewfile.local
+*.local
+
+# Generated dependencies
+node_modules/
+
+# Editor state
+.idea/
+.vscode/
+
+# Local-only dotfiles inputs
+local/
+*.env

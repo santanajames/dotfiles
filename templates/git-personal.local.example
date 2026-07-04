@@ -1,0 +1,6 @@
+[user]
+	name = Your Name
+	email = personal@example.com
+
+[github]
+	user = your-personal-handle

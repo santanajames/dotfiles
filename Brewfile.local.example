@@ -1,0 +1,10 @@
+# Copy this file to Brewfile.local for personal or employer-specific packages
+# that should stay out of the public repo.
+
+# Password managers
+# cask "bitwarden"
+# brew "bitwarden-cli"
+
+# App secrets platforms
+# brew "infisical"
+# brew "doppler"
